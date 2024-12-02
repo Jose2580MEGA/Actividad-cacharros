@@ -19,3 +19,8 @@
 .toastfondo{
     background-color: aquamarine;
 }
+
+.container{
+    display: flex;
+    flex-flow: column wrap-reverse;
+}

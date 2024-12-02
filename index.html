@@ -9,6 +9,9 @@
   
     <title>Document</title>
 </head>
+
+
+
 <body>
   <div class="container">
   <nav class="navbar navbar-dark navbarra">
@@ -20,17 +23,18 @@
           <h2>CACHARROS LOS AMIGOS</h2> 
         </a>
         </div>
-        <div class="carrito col-1 justify-content-end mt-3"  data-bs-toggle="modal" data-bs-target="#factura">
-          
-            <button type="button" class="btn btn-primary position-relative">
+        <div class="col-2 col-md-1 d-flex justify-content-end align-items-center">
+            <div class=" carrito" data-bs-toggle="modal" data-bs-target="#factura" onclick="visualizarFactura()">
+          <button type="button" class="btn btn-primary position-relative">
               <i class="bi bi-cart4"></i>
               <span id="carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 0
-            </span>
-          </div>
+              </span>
+          </button>
       </div>
-    
-    </div>
+  </div>
+</div>
+</div>
   </nav>
   <div class="row mt-3 justify-content-center">
       <div class="col-6">
@@ -111,9 +115,8 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Factura de compra</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          ...
-        </div>
+        <class="modal-body"  id="descripcionFactura"style="overflow-x: auto;"></class>
+      </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
