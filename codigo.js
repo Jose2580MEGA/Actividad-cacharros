@@ -1,4 +1,3 @@
-
 let carros = []
 let compras = []
 const myToast = new bootstrap.Toast(document.getElementById('liveToast'));
@@ -11,8 +10,6 @@ let carro = {
   precio : 0,
 
 }
-
-
 
 let cajita = document.getElementById('numero')
 
@@ -43,11 +40,9 @@ function agregarcarro(){
       myToast.show();
     
 }
-
 function cantidadelementos(){
     document.getElementById('cantidad').innerText = numeros.length
 }
-
 function limpiar() {
     let marca = document.getElementById('marca')
     marca.value = ''
@@ -57,7 +52,6 @@ function limpiar() {
     document.getElementById('precio').value = 0
     marca.focus()
 }
-
 function visualizarcatalogo(){
     let tarjetas = `<div class="row">`
     for(pos in carros){
@@ -70,17 +64,15 @@ function visualizarcatalogo(){
                           
                             <div class="card-body">
                                 <h5 class="card-title">${data.marca}</h5>
-                                <p <span >Modelo : ${data.modelo}</span>
-                                <span >Cilindraje : ${data.cilindraje}</span></p>
+                                <p></p><span >Modelo : ${data.modelo}</span></p>
+                                <p></p><span >Cilindraje : ${data.cilindraje}</span></p>
                                 <button onclick="comprasvehiculo(${pos})">$ ${data.precio}</button>
                             </div>
                       </div></div>`
     }
     tarjetas += "</div>"
     document.getElementById('catalogo').innerHTML = tarjetas
-
 }
-
 function visualizardatos(){
     let tabla = `<table class="table table-dark table-hover" border='1'>
       <thead>
@@ -89,6 +81,7 @@ function visualizardatos(){
         <th>CILINDRAJE</th>
         <th>PRECIO</th>
         <th>IMAGEN</th>
+        </tr>
         </thead>`
     for(data of carros){
       tabla += `<tr>
@@ -100,33 +93,30 @@ function visualizardatos(){
                 </tr>`
   }
   tabla += `</table>`
-  document.getElementById('datos').innerHTML = tabla
-
+  document.getElementById('datos').innerHTML = tabla;
 }
 
-function visualizarFactura(){
+function visualizarCarrito(){
     let tabla = `<table class="table table-dark table-hover" border='1'>
       <thead>
-      <tr>
-      <tbody>
         <th>MARCA</th>
         <th>MODELO</th>
         <th>CILINDRAJE</th>
         <th>PRECIO</th>
         <th>IMAGEN</th>
         </tr>
-        </thead>
-        </tbody>`;
+        </thead>`
     for(data of carros){
       tabla += `<tr>
                   <td>${data.marca}</td>
                   <td>${data.modelo}</td>
                   <td>${data.cilindraje}</td>
                   <td>${data.precio}</td>
-                  <td><img src="${data.imagen}" class="imagen"></td>
+                  <td><img src="${data.imagen}" class="imagen" alt="Imagen del vehículo"></td>
                 </tr>`
   }
   tabla += `</table>`
-  document.getElementById('descripcionFactura').innerHTML = tabla;
-
+  document.getElementById('detallefactura').innerHTML = tabla;
 }
+
+
