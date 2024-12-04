@@ -106,17 +106,15 @@ function visualizarCarrito(){
         <th>IMAGEN</th>
         </tr>
         </thead>`
-    for(data of carros){
+    for(articulos of compras){
       tabla += `<tr>
-                  <td>${data.marca}</td>
-                  <td>${data.modelo}</td>
-                  <td>${data.cilindraje}</td>
-                  <td>${data.precio}</td>
-                  <td><img src="${data.imagen}" class="imagen" alt="Imagen del vehículo"></td>
+                  <td>${articulos.marca}</td>
+                  <td>${articulos.modelo}</td>
+                  <td>${articulos.cilindraje}</td>
+                  <td>${articulos.precio}</td>
+                  <td><img src="${articulos.imagen}" class="imagen" alt="Imagen del vehículo"></td>
                 </tr>`
   }
   tabla += `</table>`
   document.getElementById('detallefactura').innerHTML = tabla;
 }
-
-
